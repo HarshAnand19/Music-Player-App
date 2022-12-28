@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/themeColor"
+    tools:context=".NowPlaying">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:id="@+id/songImgNP"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        app:shapeAppearanceOverlay="@style/curved"
+        android:src="@drawable/music"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:id="@+id/nextButtonNP"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/next_icon"
+        app:iconTint="@color/white"
+        android:backgroundTint="?attr/themeColor"
+        android:layout_centerVertical="true"
+        app:iconSize="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentEnd="true"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:id="@+id/playPauseButtonNP"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/play_icon"
+        app:iconTint="@color/white"
+        android:backgroundTint="?attr/themeColor"
+        android:layout_centerVertical="true"
+        app:iconSize="40dp"
+        android:layout_toStartOf="@+id/nextButtonNP"
+        android:layout_marginHorizontal="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/songnameNP"
+        android:text="@string/song_name"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_toStartOf="@+id/playPauseButtonNP"
+        android:layout_toEndOf="@id/songImgNP"
+        android:gravity="center"
+
+       android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+
+        />
+
+
+</RelativeLayout>

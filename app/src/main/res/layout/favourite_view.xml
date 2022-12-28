@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="70dp"
+        android:id="@+id/songImgFV"
+        app:shapeAppearanceOverlay="@style/curved"
+        android:contentDescription="@string/song_name"
+        android:layout_height="70dp"
+        android:src="@drawable/music"/>
+
+    <TextView
+        android:layout_width="70dp"
+        android:id="@+id/songnameFV"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:textColor="@color/black"
+        android:text="@string/song_name"/>
+
+</LinearLayout>

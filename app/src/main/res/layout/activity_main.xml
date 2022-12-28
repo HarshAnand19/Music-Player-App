@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:id="@+id/shuffleBtn"
+               android:contentDescription="@string/shuffle_btn"
+               style="@style/Widget.AppCompat.Button.Borderless"
+               android:drawableTop="@drawable/shuffle_icon"
+               android:text="@string/shuffle_btn"
+               android:textColor="@color/black"
+               android:textAllCaps="false"
+               android:layout_weight="1"/>
+
+           <androidx.appcompat.widget.AppCompatButton
+               android:layout_width="wrap_content"
+               android:id="@+id/favouritesBtn"
+               android:layout_height="match_parent"
+               android:contentDescription="@string/favourites_btn"
+               style="@style/Widget.AppCompat.Button.Borderless"
+               android:drawableTop="@drawable/favourite_icon"
+               android:text="@string/favourites_btn"
+               android:textColor="@color/black"
+               android:textAllCaps="false"
+               android:layout_weight="1"/>
+
+           <androidx.appcompat.widget.AppCompatButton
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:id="@+id/playlistBtn"
+               android:contentDescription="@string/playlist_btn"
+               style="@style/Widget.AppCompat.Button.Borderless"
+               android:drawableTop="@drawable/playlist_icon"
+               android:text="@string/playlist_btn"
+               android:textColor="@color/black"
+               android:textAllCaps="false"
+               android:layout_weight="1"/>
+
+       </LinearLayout>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/totalSongs"
+           android:text="@string/total_songs"
+           android:textColor="@color/black"
+           android:layout_margin="10dp"
+           />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:scrollbars="vertical"
+           android:layout_width="match_parent"
+           android:id="@+id/musicRV"
+           android:layout_height="match_parent"
+           android:scrollbarThumbVertical="@drawable/scrollbar_icon"
+           />
+
+   </LinearLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nowPlaying"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:name="com.example.musicapp.NowPlaying"
+            tools:layout="@layout/fragment_now_playing"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"
+        android:id="@+id/navView"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
